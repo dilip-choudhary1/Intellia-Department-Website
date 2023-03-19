@@ -1,0 +1,311 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #050505;
+}
+
+.eslogo
+{
+    position: absolute;
+    /* background-image: 'WhatsApp_Image_2022-12-05_at_6.31.52_PM-removebg-preview.png'; */
+    /* margin: -450px auto -450px; */
+    margin-top: 10;
+    margin-left: -1300px;
+    /* margin-bottom: -3000; */
+    width: 100px;
+    height: 750px;
+    transform-style: preserve-3d;
+    /* transform: rotateX(-30deg);
+    animation: animate 4s linear infinite; */
+
+}
+.iitjlogo
+{
+  position: absolute;
+    /* background-image: 'WhatsApp_Image_2022-12-05_at_6.31.52_PM-removebg-preview.png'; */
+    /* margin: -450px auto -450px; */
+    margin-top: 10;
+    margin-left: 1100px;
+    /* margin-bottom: -3000; */
+    width: 100px;
+    height: 700px;
+    transform-style: preserve-3d;
+    /* transform: rotateX(-30deg);
+    animation: animate 4s linear infinite; */
+
+}
+
+.cube
+{
+    position: absolute;
+
+    margin: -350px auto -450px;
+    margin-left: 800px;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg);
+    animation: animate 4s linear infinite;
+
+}
+@keyframes animate
+{
+    0%
+    {
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%
+    {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+}
+
+.cube div
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+.cube div span
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515,#00ec00);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);;
+}
+
+.top
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+.top::before
+{
+    content:'' ;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #0f0;
+    transform: translateZ(-400px);
+    filter : blur(20px);
+    box-shadow: 0 0 120px rgba(0, 255, 0,0.2),
+    0 0 120px rgba(0, 255, 0,0.4),
+    0 0 120px rgba(0, 255, 0,0.6),
+    0 0 120px rgba(0, 255, 0,0.8),
+    0 0 120px rgba(0, 255, 0,1);
+}
+
+
+
+
+
+
+
+/* body {
+	background-image: url(ok.png);
+    height: 100vh;
+   background-size: cover;
+    font-family: 'Roboto Condensed', sans-serif;
+} */
+ul, li {
+  list-style: none outside none;
+}
+/* basic menu styles */
+.nav-menu {
+    /* position: relative; */
+  display: block;
+	background: #74adaa;
+	width:fit-content;
+	margin: -250px auto 450px;
+    
+}
+.nav-menu > li {
+  display: inline;
+  float:left;			
+	border-right:1px solid #333;
+  position: relative;
+}
+.nav-menu > li:last-child {
+  border-right: none;
+}
+.nav-menu li a {
+  color: #fff;
+	display: block;
+	text-decoration: none;
+	font-family: 'Roboto Condensed', sans-serif;	 
+	font-smoothing: antialiased;
+	text-transform: uppercase;
+	overflow: visible;
+	line-height: 20px;
+    font-weight: 300;
+	font-size: 14px;
+    letter-spacing: 1px;
+	padding: 15px 30px 15px 31px;			
+}
+
+/* animation domination */
+.three-d {   
+  perspective: 200px;   
+  transition: all .07s linear;
+  position: relative;
+}
+
+.three-d:not(.active):hover {
+  cursor: pointer;
+}
+
+.three-d:not(.active):hover .three, 
+.three-d:not(.active):focus .three {   
+  transform: translateZ(-25px) rotateX(90deg);
+}
+
+.three {  
+  transition: all .3s ease-out;   
+  transform: translatez(-25px);   
+  transform-style: preserve-3d;   
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.front {  
+  transform: rotatex(0deg) translatez(25px);
+}
+
+.back {   
+  transform: rotatex(-90deg) translatez(25px);
+  color: #FFE7C4;
+}
+
+.front, .back {
+  display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgb(43, 43, 22);
+	padding: 15px 30px 15px 31px;	
+	color: white;	 
+    pointer-events: none;   
+    box-sizing: border-box;
+}
+.nav-menu li .active .front,
+.nav-menu li .active .back,
+.nav-menu li a:hover .front,
+.nav-menu li a:hover .back {
+  background-color: yellow;   
+  background-size: 5px 5px;
+  background-position: 0 0, 30px 30px; 
+    color: black;
+   
+}
+.nav-menu ul {
+  position: absolute;
+  left: -40px;
+	text-align: left;
+	line-height: 40px;
+	font-size: 10px;
+	width: 200px; 
+  transition: all 0.3s ease-in;   
+  transform-origin: 0px 0px;  
+  transform: rotateX(-90deg);   
+	backface-visibility: hidden;
+}
+.nav-menu > li:hover ul {
+  display: block;  
+	transform: rotateX(0deg);
+}
+
+
+.text
+{
+    position: absolute;
+
+    margin: -450px auto -450px;
+    margin-left: -600px;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    /* transform: rotateX(-30deg); */
+    /* animation: animate 4s linear infinite; */
+
+}
+
+.text p1 {
+	text-transform: uppercase;
+	letter-spacing: .5em;
+	display: inline-block;
+	border: 4px double rgba(255,255,255,.25);
+	border-width: 4px 0;
+	padding: 1.5em 0em;
+	position: absolute;
+	top: 18%;
+	left: 50%;
+	width: 40em;
+	margin: 0 0 0 -20em;
+}
+  
+.text span 
+{
+
+  	font: 700 4em/1 "Oswald", sans-serif;
+  	letter-spacing: 0;
+  	padding: .25em 0 .325em;
+	  display: block;
+	  margin: 0 auto;
+  	text-shadow: 0 0 80px rgba(255,255,255,.5);
+
+/* Clip Background Image */
+
+	  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+	  -webkit-background-clip: text;
+	  background-clip: text;
+
+/* Animate Background Image */
+
+	  -webkit-text-fill-color: transparent;
+	  -webkit-animation: aitf 80s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-backface-visibility: hidden;
+
+}
+
+
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
